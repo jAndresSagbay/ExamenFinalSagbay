@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html" 
+      xmlns:p="http://primefaces.org/ui"> 
+
+<h:head></h:head> 
+<body> 
+
+<label>Hola mundo</label>
+
+			<div class="card">
+    <h:form id="form">
+        <p:dataTable id="productos" var="producto" value="#{stockB.productos}" rowKey="#{prodcuto.id}"
+                     selection="#{stockB.producto}" selectionMode="single" widgetVar="customersTable">
+            <f:facet name="header">
+                TABLA DE PRODUCTOS
+            </f:facet>
+
+            <p:column headerText="# Producto">
+                <h:outputText value="#{producto.id}" />
+            </p:column>
+            <p:column headerText="nombre">
+                <h:outputText value="#{producto.nombre}" />
+            </p:column>
+            
+            <p:column headerText="Stock">
+                <h:outputText value="#{producto.stock}" />
+            </p:column>
+           
+        </p:dataTable>
+                
+    </h:form>
+</div>
+</body> 
+</html>
