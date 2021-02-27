@@ -1,7 +1,5 @@
 package ec.edu.ups.appdis.g1.examen.ExamenFerreteriaJEE.cli;
 
-import java.util.List;
-
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Entity;

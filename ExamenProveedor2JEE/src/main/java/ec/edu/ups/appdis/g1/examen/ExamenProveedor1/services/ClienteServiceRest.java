@@ -16,7 +16,7 @@ import ec.edu.ups.appdis.g1.examen.ExamenProveedor1.on.ProductoOn;
 
 
 
-@Path("serv")
+@Path("serv2")
 public class ClienteServiceRest {
 	@Inject
 	private ProductoOn productoon;

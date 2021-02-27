@@ -28,8 +28,8 @@ public class StockB implements Serializable{
 
 	@Inject
 	ProductoOn productoon;
-	@Inject 
-	transient StockCli cli;
+	/*@Inject 
+	transient StockCli cli;*/
 	
 	private Producto producto;
 	
@@ -48,10 +48,14 @@ public class StockB implements Serializable{
 
 	public void listarProductos() {
 		//StockCli cli = new StockCli(); 
+		Producto c = new Producto();
+		c.setId(1);
+		c.setNombre("madera");
+		c.setStock(30);
 		
-		this.productos.add(this.cli.getProdcuto1("cemento"));
+		this.productos.add(c/*this.cli.getProdcuto1("cemento"));
 
-		this.productos.add(this.cli.getProdcuto2("clavos"));
+		this.productos.add(this.cli.getProdcuto2("clavos")*/);
 		
 	}
 	public void setProducto(Producto producto) {
