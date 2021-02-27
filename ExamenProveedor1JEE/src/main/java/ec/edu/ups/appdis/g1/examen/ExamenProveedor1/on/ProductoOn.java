@@ -16,12 +16,20 @@ public class ProductoOn {
 }
 	
 	public Respuesta actualizar( Producto producto) {
-		this.dao.actualizarProducto(producto);
 		Respuesta res= new Respuesta();
+		Producto aux = this.dao.buscarProducto(producto.getNombre());
+		if (producto.getStock()>aux.getStock()) {
+			res.setCodigo(1);
+			res.setMensaje("erro no hay suficnete stock");
+		}else {
+			this.dao.actualizarProducto(producto);
+		
 		res.setCodigo(200);
 		res.setMensaje("ok");
-		return res;
+		}
 		
+		return res;
+
 		
 	}
 
