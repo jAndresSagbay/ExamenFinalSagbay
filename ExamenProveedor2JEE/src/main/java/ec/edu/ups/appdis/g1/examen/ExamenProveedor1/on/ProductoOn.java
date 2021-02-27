@@ -15,23 +15,23 @@ public class ProductoOn {
 		return this.dao.buscarProducto(nombre);
 }
 	
-	public Respuesta actualizar( Producto producto) {
-		
-		Respuesta res= new Respuesta();
-		Producto aux = this.dao.buscarProducto(producto.getNombre());
-		if (producto.getStock()>aux.getStock()) {
-			res.setCodigo(1);
-			res.setMensaje("erro no hay suficnete stock");
-		}else {
-			this.dao.actualizarProducto(producto);
-		
-		res.setCodigo(200);
-		res.setMensaje("ok");
-		}
-		
-		return res;
-		
-		
-	}
 
+		public Respuesta actualizar( Producto producto) {
+			Respuesta res= new Respuesta();
+			Producto aux = this.dao.buscarProducto(producto.getNombre());
+			if (producto.getStock()>aux.getStock()) {
+				res.setCodigo(1);
+				res.setMensaje("erro no hay suficnete stock");
+			}else {
+				aux.setStock(aux.getStock()-producto.getStock());
+				this.dao.actualizarProducto(aux);
+			
+			res.setCodigo(200);
+			res.setMensaje("ok");
+			}
+			
+			return res;
+
+			
+		}
 }

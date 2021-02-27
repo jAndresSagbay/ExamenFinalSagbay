@@ -22,7 +22,8 @@ public class ProductoOn {
 			res.setCodigo(1);
 			res.setMensaje("erro no hay suficnete stock");
 		}else {
-			this.dao.actualizarProducto(producto);
+			aux.setStock(aux.getStock()-producto.getStock());
+			this.dao.actualizarProducto(aux);
 		
 		res.setCodigo(200);
 		res.setMensaje("ok");
